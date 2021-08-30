@@ -1,0 +1,22 @@
+{% extends 'blogger/base.html' %}
+
+{% block content %}
+
+{% for post in posts %}
+<div class="fh5co-entry padding">
+	<img src="{{ post.author.profile.image.url }}" alt="profile pic">
+	<div>
+		<span class="fh5co-post-date">{{ post.date_posted|date:"F d, Y" }}</span>
+		<h2><a href=" {% url 'post-detail' post.id %} ">{{ post.title }}</a></h2>
+		<p>How two simple exercises changed my life</p>
+	</div>
+</div>
+
+{% endfor %} 
+
+
+
+
+
+{% endblock content %}
+

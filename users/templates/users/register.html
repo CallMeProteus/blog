@@ -1,0 +1,21 @@
+{% extends 'blogger/base.html' %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+
+ <div class='content=section' style='padding:40px'>
+ <form method='POST'>
+ {% csrf_token %}
+{{form|crispy}}
+<button type='submit'>Sign Up </button>
+<div>
+<small>
+Already have an account?
+
+<a href= "{% url 'login' %}"  >Sign In</a>
+ </small>
+</div>
+ </div>
+
+
+{% endblock content %}

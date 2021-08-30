@@ -1,0 +1,17 @@
+{% extends 'blogger/base.html' %}
+
+{% block content %}
+
+ <div class='content=section' style='padding:40px'>
+ <form method='POST'>
+<legend> Delete Post ?</legend>
+ {% csrf_token %}
+{{ object.title }}
+<button class="btn btn-outline-danger"style='color:red' type='submit'>Delete </button>
+<a style='color:green'  href="{% url 'post-detail' object.id %}" class="btn btn-outline-secondary" >Cancel </button>
+
+
+ </div>
+
+
+{% endblock content %}
